@@ -1,0 +1,168 @@
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Day and Night Variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+  --calculator-bg: #000;
+  --button-bg: #65268F;
+  --button-hover: #F90C67;
+  --button-text: #fff;
+  --button-clear-bg: #F90C67;
+  --button-operator-bg: #F90C67;
+  --button-equal-bg: #4CAF50;
+  --input-bg: #fff;
+  --input-text: #000;
+  --input-border: #ccc;
+}
+
+/* Night Mode Variables */
+body.night-mode {
+  --bg-color: #000;
+  --text-color: #fff;
+  --calculator-bg: #fff;
+  --button-bg: #fff;
+  --button-hover: #777;
+  --button-text: #65268f;
+  --button-clear-bg: #fff;
+  --button-operator-bg: #fff;
+  --button-equal-bg: #5CB85C;
+  --input-bg: #504c4c;
+  --input-text: #fff;
+  --input-border: #888;
+}
+
+/* Alternate hover colors for night mode */
+body.night-mode .btn:hover {
+  background-color: #555; /* Change hover color in night mode */
+}
+
+body.night-mode .btn.clear:hover,
+body.night-mode .btn.operator:hover,
+body.night-mode .btn.equal:hover {
+  background-color: #888; /* Change specific hover colors in night mode */
+}
+
+/* Calculator Container */
+.calculator {
+  padding: 20px;
+  width: 320px;
+  background-color: var(--calculator-bg);
+  border-radius: 10px;
+  box-shadow: 
+      -2px 2px 30px var(--button-clear-bg),
+      2px -2px 40px yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+/* Display Screen */
+.display-screen {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#display {
+  width: calc(100% - 60px); /* Leave space for the clear button */
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 15px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  font-size: 18px;
+  text-align: right;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+/* Button Styling */
+.btn {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #000;
+}
+
+.btn.clear {
+  width: 50px; /* Smaller button for clear */
+  background-color: var(--button-clear-bg);
+}
+
+.btn.operator {
+  background-color: var(--button-operator-bg);
+}
+
+.btn.equal {
+  background-color: var(--button-equal-bg);
+}
+
+.btn:hover {
+  background-color: var(--button-hover);
+}
+
+.btn.clear:hover,
+.btn.operator:hover,
+.btn.equal:hover {
+  background-color: var(--button-hover);
+}
+
+/* Button Container and Row */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-clear-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: var(--button-hover);
+}
